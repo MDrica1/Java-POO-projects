@@ -1,2 +1,2 @@
-# Java-POO-projects
-Projects developed for OxeTech Lab's Java OOP course.
+# Java-POO-projects: To do list
+Project developed for OxeTech Lab's Java OOP course.
