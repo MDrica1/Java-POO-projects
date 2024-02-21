@@ -51,19 +51,12 @@ public class Tarefa {
                 return "Outros";
         }
     }
-
+     //FALTA: permitir consultar todos, só marcados ou só não marcados
     public String consultar() {
         return "Título: " + titulo + "\nStatus: " + getStatus() + "\nCategoria: " + getCategoria() + "\nDescrição: " + descricao;
     }
 
-    /*
-    public String getTitulo() {
-        return titulo;
-    }
 
-    public String getDescricao() {
-        return descricao;
-    } */
 }
 
 
