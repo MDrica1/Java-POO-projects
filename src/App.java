@@ -44,6 +44,14 @@ public class App {
             adicionar(novaTarefa);
             numerosTarefas.add(cont);
 
+            System.out.println("Essa tarefa foi finalizada? (s/n)");
+            String resposta1 = novaTarefa.next();
+            if (resposta1.equalsIgnoreCase("s")) {
+                tarefas.get(cont - 1).marcar();
+            } else {
+                tarefas.get(cont - 1).desmarcar();
+            }
+
             System.out.print("Deseja adicionar outra tarefa? (s/n): ");
             String resposta = novaTarefa.next();
 
