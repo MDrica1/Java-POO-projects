@@ -15,23 +15,7 @@ public class Tarefa {
         this.categoria = categoria;
     }
 
-    public void marcar() {
-        this.status = true;
-        System.out.println("Parabéns! Tarefa finalizada!");
-    }
 
-    public void desmarcar() {
-        this.status = false;
-        System.out.println("Tarefa pendente.");
-    }
-
-    public String getStatus() {
-        if (status) {
-            return "Finalizada";
-        } else {
-            return "Pendente";
-        }
-    }
 
     public String getCategoria() {
         switch (categoria) {
@@ -51,12 +35,51 @@ public class Tarefa {
                 return "Outros";
         }
     }
-     //FALTA: permitir consultar todos, só marcados ou só não marcados
-    public String consultar() {
-        return "Título: " + titulo + "\nStatus: " + getStatus() + "\nCategoria: " + getCategoria() + "\nDescrição: " + descricao;
+    //FALTA: permitir consultar todos, só marcados ou só não marcados
+    public String consultar(int i) {
+        String s = "Título: " + titulo + "\nStatus: " + getStatus() + "\nCategoria: " + getCategoria() + "\nDescrição: " + descricao;
+        switch (i) {
+            case 1:
+                return s;
+            case 2:
+                if (!status) {
+                    return s;
+                } else {
+                    return null;
+                }
+            case 3:
+                if (status) {
+                    return s;
+                } else {
+                    return null;
+                }
+            default:
+                return s;
+        }
     }
 
 
+    public String getTitulo() {
+        return this.titulo;
+    }
+
+    public String getStatus() {
+        if (status) {
+            return "Finalizada";
+        } else {
+            return "Pendente";
+        }
+    }
+
+    public void marcar() {
+        this.status = true;
+        System.out.println("Parabéns! Tarefa finalizada!");
+    }
+
+    public void desmarcar() {
+        this.status = false;
+        System.out.println("Tarefa pendente.");
+    }
 }
 
 
