@@ -35,7 +35,7 @@ public class Tarefa {
                 return "Outros";
         }
     }
-    //FALTA: permitir consultar todos, só marcados ou só não marcados
+
     public String consultar(int i) {
         String s = "Título: " + titulo + "\nStatus: " + getStatus() + "\nCategoria: " + getCategoria() + "\nDescrição: " + descricao;
         switch (i) {
@@ -72,13 +72,22 @@ public class Tarefa {
     }
 
     public void marcar() {
-        this.status = true;
-        System.out.println("Parabéns! Tarefa finalizada!");
+        if (status) {
+            System.out.println("A tarefa já consta como finalizada.");
+        } else{
+            this.status = true;
+            System.out.println("Parabéns! Tarefa finalizada.");
+        }
+
     }
 
+
     public void desmarcar() {
+        if(!status){
+            System.out.println("A tarefa já consta como pendente.");
+            } else{
         this.status = false;
-        System.out.println("Tarefa pendente.");
+        System.out.println("Tarefa pendente.");}
     }
 }
 
