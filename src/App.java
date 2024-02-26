@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 /*
@@ -70,7 +71,7 @@ public class App {
         String s2;
         int n2;
         do {
-            s2 = "Algo mais? (Digite o NÚMERO):\n" + "1 - Consultar novamente\n2 - Marcar tarefas como concluídas\n3 - Desmarcar tarefas\n4 - Não. Até mais!";
+            s2 = "Algo mais? (Digite o NÚMERO):\n" + "1 - Consultar novamente\n2 - Marcar tarefas como concluídas\n3 - Desmarcar tarefas \n4 - Filtrar por categoria \n5 - Não. Até mais!";
             System.out.println(s2);
             n2 = estado.nextInt();
 
@@ -109,12 +110,23 @@ public class App {
                     }
                     break;
                 case 4:
+                    System.out.println("Digite o NÚMERO da categoria:\n" + "1 - Trabalho;\n" + "2 - Casa;\n" + "3 - Saúde e bem estar;\n" + "4 - Estudos;\n" + "5 - Religião;\n" + "6 - Lazer;\n" + "7 - Outros.");
+                    int catNum = estado.nextInt();
+                    for (int i = 0; i < tarefas.size(); i++) {
+                       if (tarefas.get(i).categoria == catNum) {
+                           System.out.println(tarefas.get(i).getTitulo() + " - " + tarefas.get(i).getCategoria());
+                       }else{
+                           System.out.println("Nenhuma tarefa encontrada.");
+                       }
+                    }
+                    break;
+                case 5:
                     System.out.println("Até mais! :)");
                     break;
                 default:
                     System.out.println("Opção inválida. Por favor, digite outro número.");
             }
-        } while (n2!=4);
+        } while (n2!=5);
     }
 
 }
